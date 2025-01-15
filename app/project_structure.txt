@@ -1,0 +1,42 @@
+.
+├── api
+│   ├── main.py
+│   └── routes
+│       └── UserRout.py
+├── infrastructure
+│   ├── alembic
+│   │   ├── env.py
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── README
+│   │   ├── script.py.mako
+│   │   └── versions
+│   ├── alembic.ini
+│   ├── core
+│   │   ├── config.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── db
+│   │   ├── __init__.py
+│   │   └── session.py
+│   ├── init_db.py
+│   ├── __init__.py
+│   ├── makefile
+│   ├── __pycache__
+│   │   └── __init__.cpython-313.pyc
+│   └── repositories
+│       └── UserRepository.py
+├── __init__.py
+├── models
+│   ├── dbModels
+│   │   ├── EntityDB.py
+│   │   ├── __init__.py
+│   │   └── User
+│   ├── dtoModels
+│   │   ├── Entity.py
+│   │   └── __init__.py
+│   └── __init__.py
+├── project_structure.txt
+└── services
+
+17 directories, 23 files

@@ -1,0 +1,29 @@
+.
+├── app
+│   ├── api
+│   │   ├── main.py
+│   │   └── routes
+│   ├── infrastructure
+│   │   ├── alembic
+│   │   ├── alembic.ini
+│   │   ├── core
+│   │   ├── db
+│   │   ├── init_db.py
+│   │   ├── __init__.py
+│   │   ├── makefile
+│   │   ├── __pycache__
+│   │   └── repositories
+│   ├── __init__.py
+│   ├── models
+│   │   ├── dbModels
+│   │   ├── dtoModels
+│   │   └── __init__.py
+│   ├── project_structure.txt
+│   └── services
+├── main.py
+├── project_structure.txt
+├── __pycache__
+│   └── main.cpython-313.pyc
+└── test_main.http
+
+15 directories, 12 files
