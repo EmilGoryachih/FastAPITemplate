@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15
+    container_name: fastapi_db
+    restart: always
+    environment:
+      POSTGRES_USER: emil
+      POSTGRES_PASSWORD: emilgan12
+      POSTGRES_DB: fastupdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: fastapi_app
+    restart: always
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_data:

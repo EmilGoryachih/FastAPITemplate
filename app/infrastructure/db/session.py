@@ -16,15 +16,8 @@ async_session_maker = async_sessionmaker(
     autoflush=False,
 )
 
-# Создание таблиц
-async def create_tables():
-    async with async_engine.begin() as conn:
-        await conn.run_sync(metadata.create_all)
-
 # Dependency для FastAPI
 async def fastapi_get_db():
-    db = async_session_maker()
-    try:
+    async with async_session_maker() as db:
         yield db
-    finally:
-        await db.close()
+
