@@ -4,6 +4,7 @@ from logging.config import fileConfig
 
 from alembic import context
 from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy.pool import NullPool
 
 import sys
 from pathlib import Path
@@ -63,10 +64,17 @@ async def run_migrations_online() -> None:
 
     Создаётся асинхронный движок и выполняется подключение.
     """
-    connectable = create_async_engine(db_url, echo=True, future=True)
+    connectable = create_async_engine(
+        db_url,
+        echo=True,
+        future=True,
+        poolclass=NullPool,
+    )
 
     async with connectable.connect() as connection:
         await connection.run_sync(do_run_migrations)
+
+    await connectable.dispose()
 
 
 if context.is_offline_mode():
